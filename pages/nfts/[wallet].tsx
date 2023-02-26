@@ -72,7 +72,7 @@ const GuestNfts = ({ guestNfts, nfts }: GuestNftsProps) => {
   return (
     <>
       <Head>
-        <title>Davi Alcântara | NFTs</title>
+        <title>SonOfMosiah | NFTs</title>
       </Head>
 
       <Box variant='page'>

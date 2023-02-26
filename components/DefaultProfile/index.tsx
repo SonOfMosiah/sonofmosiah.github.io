@@ -23,7 +23,7 @@ export const DefaultProfile = () => {
           type='paragraph'
           css={{ display: 'flex', alignItems: 'center', gap: '$2' }}
         >
-          divinurised
+          SonOfMosiah
           <Tooltip
             content='Opensea'
             triggerCSS={{
@@ -51,9 +51,9 @@ export const DefaultProfile = () => {
         </Text>
         <Clipboard
           clipboardContent={formatWalletAddress(
-            process.env.NEXT_PUBLIC_DIVINURISED_WALLET as string
+            process.env.NEXT_PUBLIC_SONOFMOSIAH_WALLET as string
           )}
-          tooltipContent={process.env.NEXT_PUBLIC_DIVINURISED_WALLET as string}
+          tooltipContent={process.env.NEXT_PUBLIC_SONOFMOSIAH_WALLET as string}
         />
       </VerticalBox>
     </Box>

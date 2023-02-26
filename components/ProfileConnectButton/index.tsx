@@ -13,7 +13,7 @@ import { Clipboard } from '../Clipboard';
 import { CustomNFTIcon } from '../Header/styles';
 import { SingleAvatar } from '../SingleAvatar';
 
-const PLACEHOLDER_WALLET_ADDRESS = '0x000000000000000';
+const PLACEHOLDER_WALLET_ADDRESS = '0xBF7BF3d445aEc7B0c357163d5594DB8ca7C12D31';
 
 export const CustomPlusIcon = styled(Plus, {
   size: '$9',
@@ -53,15 +53,15 @@ const CustomAccountIcon = styled(User, {
 });
 
 export const ProfileConnectButton = () => {
-  const formatedPlaceholderWalletAddress = formatWalletAddress(
-    PLACEHOLDER_WALLET_ADDRESS
-  );
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { wallet: activePath } = router.query;
   const { address } = useAccount();
   const { chain } = useNetwork();
   console.log(chain);
+
+  const guestAddress = address ? address : PLACEHOLDER_WALLET_ADDRESS;
+  const formattedGuestAddress = formatWalletAddress(guestAddress);
 
   const handleShowGuestNfts = () => {
     setIsLoading(true);
@@ -130,8 +130,8 @@ export const ProfileConnectButton = () => {
                         Guest
                       </Text>
                       <Clipboard
-                        clipboardContent={formatedPlaceholderWalletAddress}
-                        tooltipContent={PLACEHOLDER_WALLET_ADDRESS}
+                        clipboardContent={formattedGuestAddress}
+                        tooltipContent={guestAddress}
                       />
                     </VerticalBox>
                   </Box>

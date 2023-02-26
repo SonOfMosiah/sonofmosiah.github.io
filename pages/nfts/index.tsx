@@ -34,13 +34,13 @@ const Nfts = ({ nfts = [] }: NftsProps) => {
   return (
     <>
       <Head>
-        <title>Davi Alcântara | NFTs</title>
+        <title>SonOfMosiah | NFTs</title>
       </Head>
-      <Box variant="page">
-        <VerticalBox as="header" css={{ gap: '$10' }}>
+      <Box variant='page'>
+        <VerticalBox as='header' css={{ gap: '$10' }}>
           <VerticalBox>
-            <Text type="title">NFTs</Text>
-            <Text type="paragraph">Web3 playground</Text>
+            <Text type='title'>NFTs</Text>
+            <Text type='paragraph'>Web3 playground</Text>
           </VerticalBox>
           <SearchNft />
           <Box css={{ justifyContent: 'space-between', alignItems: 'center' }}>
@@ -50,8 +50,8 @@ const Nfts = ({ nfts = [] }: NftsProps) => {
         </VerticalBox>
         <VerticalBox>
           {nfts.length ? (
-            <CardContainer type="multiple">
-              {nfts.map(collection => (
+            <CardContainer type='multiple'>
+              {nfts.map((collection) => (
                 <NftCollectionCard
                   key={collection.openseaUrl}
                   collection={collection}
