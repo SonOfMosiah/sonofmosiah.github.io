@@ -1,11 +1,15 @@
-import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
+import { globalStyles } from 'stitches.config';
+import { ThemeProvider } from 'next-themes';
+import { lightTheme } from 'stitches.config';
 import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, goerli } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+
+import { Header } from '../components/Header';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
@@ -19,7 +23,7 @@ const { chains, provider, webSocketProvider } = configureChains(
     alchemyProvider({
       // This is Alchemy's default API key.
       // You can get your own at https://dashboard.alchemyapi.io
-      apiKey: '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC',
+      apiKey: process.env.ALCHEMY_API_KEY || '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC',
     }),
     publicProvider(),
   ]
@@ -37,13 +41,25 @@ const wagmiClient = createClient({
   webSocketProvider,
 });
 
+globalStyles();
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
-        <Component {...pageProps} />
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <ThemeProvider
+      attribute='class'
+      defaultTheme='system'
+      value={{
+        light: lightTheme.className,
+        dark: 'dark',
+      }}
+    >
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains}>
+          <Header />
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </ThemeProvider>
   );
 }
 
