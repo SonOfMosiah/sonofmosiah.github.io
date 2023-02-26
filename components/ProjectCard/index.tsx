@@ -1,13 +1,21 @@
 import { ArrowSquareOut, GitBranch, GithubLogo, Star } from 'phosphor-react';
-// import { IRepo } from '../../@types/repositories';
 import { Text } from 'styles/primitives/Text';
 import { Tooltip } from 'styles/primitives/Tooltip';
 import { Nothing } from 'components/Nothing';
 import { CardContainer, HoverElement } from '../WritingCard/styles';
 import { Toolbar, ToolbarDivider, ToolbarGroup, ToolbarLink } from './styles';
 
+interface IRepo {
+  name: string;
+  description: string;
+  productionUrl: string;
+  repositoryUrl: string;
+  stars: number;
+  forks: number;
+}
+
 interface ProjectCardProps {
-  repo: string;
+  repo: IRepo;
 }
 
 export const ProjectCard = ({ repo }: ProjectCardProps) => {

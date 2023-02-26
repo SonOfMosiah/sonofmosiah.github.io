@@ -18,7 +18,7 @@ export const Nothing = () => {
     >
       <Info />
       <Text type='title' css={{ textAlign: 'left', lineHeight: 'initial' }}>
-        Looks like there's nothing here...
+        Looks like there&apos;s nothing here...
       </Text>
     </Box>
   );

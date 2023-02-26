@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { polygonApi } from 'services/axios';
+import { IReceivedNft } from 'types/nfts';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const apiKey = process.env.ALCHEMY_API_KEY;
@@ -8,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     `/${apiKey}/getNFTs?owner=${ownerAddr}`
   );
 
-  const { ownedNfts }: any = data; // TODO: fix the any type
+  const { ownedNfts }: IReceivedNft = data;
 
   const collections = ownedNfts.map((nft) => nft.title.split(' #')[0]);
 

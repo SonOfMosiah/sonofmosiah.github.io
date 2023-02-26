@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { polygonApi } from 'services/axios';
-// import { IReceivedNft } from '../../../@types/nfts';
+import { IReceivedNft } from 'types/nfts';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!req.query.wallet) return;
   if (req.query.wallet.length < 42) {
     res.status(400).json({ error: 'Invalid wallet address' });
   }
@@ -13,7 +14,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     `/${apiKey}/getNFTs?owner=${ownerAddr}`
   );
 
-  const { ownedNfts }: any = data; // TODO: fix the any type
+  const { ownedNfts }: IReceivedNft = data;
 
   const collections = ownedNfts.map((nft) => nft.title.split(' #')[0]);
 

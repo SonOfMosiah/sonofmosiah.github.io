@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { GetStaticProps, NextPage } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 import { purple } from '@radix-ui/colors';
@@ -60,7 +60,7 @@ const Home: NextPage<any> = ({ repos }: ProjectProps) => {
             Ammon Werner
           </Text>
           <Text type='paragraph' css={{ marginTop: '$4' }}>
-            Hey! I'm Ammon Werner, a Software Engineer and Computer Science
+            Hey! I&apos;m Ammon Werner, a Software Engineer and Computer Science
             student. Based in Utah.
           </Text>
           <Text type='paragraph' css={{ marginTop: '$4' }}>

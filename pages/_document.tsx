@@ -13,7 +13,7 @@ export default function Document() {
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
-          crossOrigin='true'
+          crossOrigin='use-credentials'
         />
         <link
           href='https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap'

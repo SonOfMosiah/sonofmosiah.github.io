@@ -2,17 +2,17 @@ import { GetServerSideProps, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import { DefaultProfile } from '../../components/DefaultProfile';
-import { NftCollectionCard } from '../../components/NftCollectionCard';
-import { CardContainer } from '../../components/NftCollectionCard/styles';
-import { Nothing } from '../../components/Nothing';
-import { ProfileConnectButton } from '../../components/ProfileConnectButton';
-import { SearchNft } from '../../components/SearchNft';
-import { nftApi } from '../../services/axios';
-import { Box } from '../../styles/primitives/Box';
-import { Text } from '../../styles/primitives/Text';
-import { VerticalBox } from '../../styles/primitives/VerticalBox';
-import { INftCollection } from '../../@types/nfts';
+import { DefaultProfile } from 'components/DefaultProfile';
+import { NftCollectionCard } from 'components/NftCollectionCard';
+import { CardContainer } from 'components/NftCollectionCard/styles';
+import { Nothing } from 'components/Nothing';
+import { ProfileConnectButton } from 'components/ProfileConnectButton';
+import { SearchNft } from 'components/SearchNft';
+import { nftApi } from 'services/axios';
+import { Box } from 'styles/primitives/Box';
+import { Text } from 'styles/primitives/Text';
+import { VerticalBox } from 'styles/primitives/VerticalBox';
+import { INftCollection } from 'types/nfts';
 import Head from 'next/head';
 
 interface NftsProps {

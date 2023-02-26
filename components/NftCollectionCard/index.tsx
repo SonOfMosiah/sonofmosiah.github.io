@@ -4,7 +4,6 @@ import { CaretDown, CaretRight } from 'phosphor-react';
 import { useState } from 'react';
 import { EthereumIcon } from 'public/assets/EthereumIcon';
 import { MaticIcon } from 'public/assets/MaticIcon';
-import { INftCollection } from '../../@types/nfts';
 import { Box } from 'styles/primitives/Box';
 import { Text } from 'styles/primitives/Text';
 import { Tooltip } from 'styles/primitives/Tooltip';
@@ -21,6 +20,22 @@ import {
   NftText,
   skeletonLoader,
 } from './styles';
+
+interface INft {
+  title: string;
+  number: number | string;
+  description: string;
+  contract: string;
+  image: string;
+  id: number;
+  openseaUrl: string;
+}
+
+interface INftCollection {
+  collectionName: string;
+  openseaUrl: string;
+  nfts: INft[];
+}
 
 interface NftCollectionCardProps {
   collection: INftCollection;
