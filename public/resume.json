@@ -1,0 +1,19 @@
+{
+  "name": "Name of the item.",
+  "description": "Description of the item.",
+  "external_url": "https://example.com/item/123",
+  "image": "https://example.com/item/123/image.jpg",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Happy"
+    }
+  ],
+  "background_color": "000000",
+  "animation_url": "https://example.com/item/123/animation.mp4",
+  "youtube_url": "https://www.youtube.com/watch?v=1234567890"
+}
