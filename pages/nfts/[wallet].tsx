@@ -144,17 +144,17 @@ export const getServerSideProps: GetServerSideProps = async ({
   let guestNfts = [];
   switch (network) {
     case 'ethereum': {
-      const { data } = await nftApi.get(`api/ethereum/${wallet}`);
+      const { data } = await nftApi.get(`/api/ethereum/${wallet}`);
       guestNfts = data;
       break;
     }
     case 'polygon': {
-      const { data } = await nftApi.get(`api/polygon/${wallet}`);
+      const { data } = await nftApi.get(`/api/polygon/${wallet}`);
       guestNfts = data;
       break;
     }
     default: {
-      const { data } = await nftApi.get(`api/polygon/${wallet}`);
+      const { data } = await nftApi.get(`/api/polygon/${wallet}`);
       guestNfts = data;
     }
   }

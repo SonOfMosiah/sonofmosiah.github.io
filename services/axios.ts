@@ -13,7 +13,7 @@ export const ethereumApi = axios.create({
 });
 
 export const nftApi = axios.create({
-  baseURL: 'http://localhost:3001/',
+  baseURL: process.env.NEXT_PUBLIC_NFT_API_URL || 'https://sonofmosiah.ai',
 });
 
 export const openseaApi = axios.create({
