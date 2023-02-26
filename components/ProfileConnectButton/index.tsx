@@ -13,7 +13,7 @@ import { Clipboard } from '../Clipboard';
 import { CustomNFTIcon } from '../Header/styles';
 import { SingleAvatar } from '../SingleAvatar';
 
-const PLACEHOLDER_WALLET_ADDRESS = '0xBF7BF3d445aEc7B0c357163d5594DB8ca7C12D31';
+const PLACEHOLDER_WALLET_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 export const CustomPlusIcon = styled(Plus, {
   size: '$9',
