@@ -41,7 +41,7 @@ export const DefaultProfile = () => {
             arrowCSS={{ fill: 'transparent' }}
           >
             <a
-              href='https://opensea.io/divinurised'
+              href='https://opensea.io/sonofmosiah'
               target='_blank'
               rel='noreferrer'
             >

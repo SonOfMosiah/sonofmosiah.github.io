@@ -64,7 +64,7 @@ const Home: NextPage<any> = ({ repos }: ProjectProps) => {
             student. Based in Utah.
           </Text>
           <Text type='paragraph' css={{ marginTop: '$4' }}>
-            Interested in design system, DX and Web3.
+            Interested in DeFi, Technology and Web3.
           </Text>
         </VerticalBox>
         <VerticalBox as='main'>
